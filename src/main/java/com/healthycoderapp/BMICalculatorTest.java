@@ -73,4 +73,15 @@ class BMICalculatorTest {
                 () -> assertEquals(98.0, coderWorstBmi.getWeight())
         );
     }
+    @Test
+    void shouldReturnCoderWithWorstBMI_whenCoderListEmpty() {
+        //given
+        List<Coder> coders = new ArrayList<>();
+
+        //when
+        Coder coderWorstBmi = BMICalculator.findCoderWithWorstBMI(coders);
+
+        //then
+        assertNull(coderWorstBmi);
+    }
 }
