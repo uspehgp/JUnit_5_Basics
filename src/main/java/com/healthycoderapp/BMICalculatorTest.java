@@ -1,6 +1,8 @@
 package com.healthycoderapp;
 
 import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.condition.DisabledOnOs;
+import org.junit.jupiter.api.condition.OS;
 import org.junit.jupiter.api.function.Executable;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
@@ -84,7 +86,7 @@ class BMICalculatorTest {
 
         @Test
         @DisplayName(">>>>sample method display name ")
-        @Disabled
+        @DisabledOnOs(OS.LINUX)
         void shouldReturnCoderWithWorstBMI_whenCoderListNotEmpty() {
             //given
             List<Coder> coders = new ArrayList<>();
